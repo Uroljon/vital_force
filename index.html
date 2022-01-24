@@ -1,12 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vital Force edu</title>
+    <!-- Custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/e7b8e12aee.js" crossorigin="anonymous"></script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="./images/logo/ico.png" type="image/x-icon">
 </head>
+
 <body>
-    
+    <header>
+        <!-- NAVIGATION PANEL -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-wrapper">
+                    <div class="navbar-left">
+                        <a href="/"><img src="./images/logo/default-monochrome.svg" alt=""></a>
+                    </div>
+                    <div class="navbar-middle">
+                        <ul class="navbar-nav">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#courses">Our courses</a></li>
+                            <li><a href="#teachers">Our teachers</a></li>
+                            <li class="navbar-dropdown-toggler">
+                                <a href="#!">Explore us</a>
+                                <ul id="navbar-dropdown">
+                                    <li><a href="#students">Our sudents</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right">
+                        <div class="language">
+                            <span id="current_lang">Eng</span>
+                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-sort-down"></i>
+                            <ul id="lang_dropdown">
+                                <li><a href="#">En</a></li>
+                                <li><a href="#">Uz</a></li>
+                                <li><a href="#">Ru</a></li>
+                            </ul>
+                        </div>
+                        <button>Contact</button>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <div class="hero_section">
+            <div class="container">
+                <div class="hero-wrapper">
+                    <div class="hero-left">
+                        <h2>Learn English.<br> Achieve your dreams!</h2>
+                        <p>Explore your hidden potential in an exclusive environment and have fun!</p>
+                        <button>Explore now !</button>
+                    </div>
+                    <div class="hero-right">
+                        <div class="message-box">
+                            <div class="icon"><i class="far fa-envelope"></i></div>
+                            <div class="message">
+                                <h2>Congratulations!</h2>
+                                <span id="message_text">Your application was accepted.</span>
+                            </div>
+                        </div>
+                        <img src="./images/hero (2).png" alt="hero image">
+                        <img class="dot" src="./images/Frame.svg" alt="icon">
+                        <img class="wave" src="./images/Frame (1).svg" alt="icon">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section id="courses">
+        <div class="container">
+            <div class="courses-wrapper">
+                <div class="courses-left">
+                    <h3>Choice of</h3>
+                    <h2>Courses</h2>
+                    <p>We do our best to make every course special for you !</p>
+                    <button>Explore Now!</button>
+                </div>
+                <div class="courses-right">
+                    <div class="carousel">
+                        <div class="carousel-items">
+                            <div class="carousel-item">
+                                <img src="./images/beginner.png" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/elementary.png" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/pre-intermediate1.jpg" alt="1">
+                            </div>
+                            <div class="carousel-item active">
+                                <img src="./images/intermediate.jpg" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/upper-intermediate1.jpg" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/pre-ielts.png" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/ielts.png" alt="1">
+                            </div>
+                        </div>
+                        <!-- arrows -->
+                        <div class="carousel-items-arrow arrow-prev"><i class="fas fa-hand-point-left"></i></div>
+                        <div class="carousel-items-arrow arrow-next"><i class="fas fa-hand-point-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <section id="teachers">
+        <div class="container">
+            <h2 class="heading">Our experienced teachers</h2>
+            <div class="teachers-wrapper">
+                <div class="teacher-item">
+                    <div class="teacher-left">
+                        <img src="./images/teacher_1.png" alt="Teacher">
+                    </div>
+                    <div class="teacher-right">
+                        <div class="teacher-info">
+                            <div class="avatar">
+                                <img src="https://media.istockphoto.com/photos/ceo-written-on-wooden-blocks-picture-id1296372105?b=1&k=20&m=1296372105&s=170667a&w=0&h=pxBrqu_4xKZgPtut0mk8uUBjZcK4VggeJT7g12HbpzY="
+                                    alt="">
+                            </div>
+                            <div>
+                                <h2 class="name">Nilufar Qosimova</h2>
+                                <p class="position">CEO, teacher</p>
+                            </div>
+                        </div>
+                        <p class="teacher-quote">
+                            I believe that curiosity, wonder and passion are defining qualities of imaginative minds and
+                            great teachers; that restlessness and discontent are vital things; and that intense
+                            experience and suffering instruct us in ways that less intense emotions can never do
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="teacher-item active">
+                    <div class="teacher-left">
+                        <img src="./images/teacher_1.png" alt="Teacher">
+                    </div>
+                    <div class="teacher-right">
+                        <div class="teacher-info">
+                            <div class="avatar">
+                                <img src="https://media.istockphoto.com/photos/ceo-written-on-wooden-blocks-picture-id1296372105?b=1&k=20&m=1296372105&s=170667a&w=0&h=pxBrqu_4xKZgPtut0mk8uUBjZcK4VggeJT7g12HbpzY="
+                                    alt="">
+                            </div>
+                            <div>
+                                <h2 class="name">Teacher name</h2>
+                                <p class="position">Teacher</p>
+                            </div>
+                        </div>
+                        <p class="teacher-quote">
+                            We are all teachers, or should be. Anyone who relays experience to another person is a
+                            teacher. Not to transmit your experience is to betray it.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="teachers-control arrow-prev"><i class="fas fa-hand-point-left"></i></div>
+                <div class="teachers-control arrow-next"><i class="fas fa-hand-point-right"></i></div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="gallery-wrapper">
+            <div class="student"><img src="./students/1.jpg" alt="1"></div>
+            <div class="student"><img src="./students/2.jpg" alt="1"></div>
+            <div class="student"><img src="./students/3.jpg" alt="1"></div>
+            <div class="student"><img src="./students/4.jpg" alt="1"></div>
+            <div class="student"><img src="./students/5.jpg" alt="1"></div>
+            <div class="student"><img src="./students/6.jpg" alt="1"></div>
+            <div class="student"><img src="./students/7.jpg" alt="1"></div>
+            <div class="student"><img src="./students/11.jpg" alt="1"></div>
+            <div class="student"><img src="./students/12.jpg" alt="1"></div>
+            <div class="student"><img src="./students/13.jpg" alt="1"></div>
+            <div class="student"><img src="./students/14.jpg" alt="1"></div>
+            <div class="student"><img src="./students/17.jpg" alt="1"></div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
