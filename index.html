@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="home">
         <!-- NAVIGATION PANEL -->
         <nav class="navbar">
             <div class="container">
@@ -35,7 +35,8 @@
                                 <a href="#!">Explore us</a>
                                 <ul id="navbar-dropdown">
                                     <li><a href="#students">Our sudents</a></li>
-                                    <li><a href="#gallery">Gallery</a></li>
+                                    <li><a href="#results">Our results</a></li>
+                                    <li><a href="#contact">Our location</a></li>
 
                                 </ul>
                             </li>
@@ -43,16 +44,16 @@
                     </div>
                     <div class="navbar-right">
                         <div class="language">
-                            <span id="current_lang">Eng</span>
+                            <span id="current_lang">EN</span>
                             <i class="fas fa-globe"></i>
                             <i class="fas fa-sort-down"></i>
                             <ul id="lang_dropdown">
-                                <li><a href="#">En</a></li>
-                                <li><a href="#">Uz</a></li>
-                                <li><a href="#">Ru</a></li>
+                                <li onclick="set_lang('en')"><a href="#">En</a></li>
+                                <li onclick="set_lang('uz')"><a href="#">Uz</a></li>
+                                <li onclick="set_lang('ru')"><a href="#">Ru</a></li>
                             </ul>
                         </div>
-                        <button>Contact</button>
+                        <a class="contact-btn" href="#contact">Contact</a>
                     </div>
                 </div>
 
@@ -62,9 +63,9 @@
             <div class="container">
                 <div class="hero-wrapper">
                     <div class="hero-left">
-                        <h2>Learn English.<br> Achieve your dreams!</h2>
-                        <p>Explore your hidden potential in an exclusive environment and have fun!</p>
-                        <button>Explore now !</button>
+                        <h2 class="hero-title">Learn English.<br> Achieve your dreams!</h2>
+                        <p class="hero-description">Explore your hidden potential in an exclusive environment and have fun!</p>
+                        <a class="more-btn" href="more.html" target="_blank">Explore now !</a>
                     </div>
                     <div class="hero-right">
                         <div class="message-box">
@@ -90,7 +91,7 @@
                     <h3>Choice of</h3>
                     <h2>Courses</h2>
                     <p>We do our best to make every course special for you !</p>
-                    <button>Explore Now!</button>
+                    <a class="more-btn" href="more.html" target="_blank">Explore now !</a>
                 </div>
                 <div class="courses-right">
                     <div class="carousel">
@@ -125,11 +126,14 @@
             </div>
         </div>
     </section>
-
-    <div class="container">
-        <hr>
+    <div class="section-divider">
+        <div class="container">
+            <div class="divider-wrapper">
+                <hr>
+                <i class="fas fa-bookmark"></i>
+            </div>
+        </div>
     </div>
-
     <section id="teachers">
         <div class="container">
             <h2 class="heading">Our experienced teachers</h2>
@@ -152,7 +156,7 @@
                         <p class="teacher-quote">
                             I believe that curiosity, wonder and passion are defining qualities of imaginative minds and
                             great teachers; that restlessness and discontent are vital things; and that intense
-                            experience and suffering instruct us in ways that less intense emotions can never do
+                            experience and suffering instruct us in ways that less intense emotions can never do.
                         </p>
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -200,23 +204,88 @@
             </div>
         </div>
     </section>
-    <section id="gallery">
-        <div class="gallery-wrapper">
-            <div class="student"><img src="./students/1.jpg" alt="1"></div>
-            <div class="student"><img src="./students/2.jpg" alt="1"></div>
-            <div class="student"><img src="./students/3.jpg" alt="1"></div>
-            <div class="student"><img src="./students/4.jpg" alt="1"></div>
-            <div class="student"><img src="./students/5.jpg" alt="1"></div>
-            <div class="student"><img src="./students/6.jpg" alt="1"></div>
-            <div class="student"><img src="./students/7.jpg" alt="1"></div>
-            <div class="student"><img src="./students/11.jpg" alt="1"></div>
-            <div class="student"><img src="./students/12.jpg" alt="1"></div>
-            <div class="student"><img src="./students/13.jpg" alt="1"></div>
-            <div class="student"><img src="./students/14.jpg" alt="1"></div>
-            <div class="student"><img src="./students/17.jpg" alt="1"></div>
+    <section id="students">
+        <h2 class="heading">Our outstanding students</h2>
+        <div class="students-wrapper">
+            <a href="./students/1.jpg" target="_blank" class="student"><img src="./students/1.jpg" alt="1"></a>
+            <a href="./students/2.jpg" target="_blank" class="student"><img src="./students/2.jpg" alt="1"></a>
+            <a href="./students/3.jpg" target="_blank" class="student"><img src="./students/3.jpg" alt="1"></a>
+            <a href="./students/4.jpg" target="_blank" class="student"><img src="./students/4.jpg" alt="1"></a>
+            <a href="./students/5.jpg" target="_blank" class="student"><img src="./students/5.jpg" alt="1"></a>
+            <a href="./students/6.jpg" target="_blank" class="student"><img src="./students/6.jpg" alt="1"></a>
+            <a href="./students/7.jpg" target="_blank" class="student"><img src="./students/7.jpg" alt="1"></a>
+            <a href="./students/11.jpg" target="_blank" class="student"><img src="./students/11.jpg" alt="1"></a>
+            <a href="./students/12.jpg" target="_blank" class="student"><img src="./students/12.jpg" alt="1"></a>
+            <a href="./students/13.jpg" target="_blank" class="student"><img src="./students/13.jpg" alt="1"></a>
+            <a href="./students/14.jpg" target="_blank" class="student"><img src="./students/14.jpg" alt="1"></a>
+            <a href="./students/17.jpg" target="_blank" class="student"><img src="./students/17.jpg" alt="1"></a>
         </div>
     </section>
+    <section id="subscribe">
+        <div class="container">
+            <div class="subscribe-wrapper">
+                <h2 class="heading">
+                    Subscribe
+                    To Our Telegram channel
+                </h2>
+                <p>Prepare yourself and take action today!</p>
+                <a target="_blank" href="https://t.me/vital_force"><i class="fab fa-telegram"></i> OK, lets's go!</a>
+            </div>
 
+        </div>
+    </section>
+    <section id="results">
+        <div class="container">
+            <h2 class="heading">Our amazing results</h2>
+            <div class="results-wrapper">
+                <a href="./images/intermediate.jpg"><img src="./images/intermediate.jpg" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/ielts.png"><img src="./images/ielts.png" alt="result"></a>
+                <a href="./images/intermediate.jpg"><img src="./images/intermediate.jpg" alt="result"></a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="heading">Our office location</h2>
+            <div class="contact-wrapper">
+                <div class="contact-left">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d784.8557926022871!2d68.82385782922069!3d40.26932699871142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xad88ee25c36f773f!2zNDDCsDE2JzA5LjYiTiA2OMKwNDknMjcuOSJF!5e1!3m2!1sen!2s!4v1643040856498!5m2!1sen!2s"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="contact-right">
+                        <p class="landmark">Landmark:</p>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="landmark-text">Yangiyer city, "Qalqon" sports club</span>
+                        </div>
+                        <p class="contact">Contact:</p>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <span id="contact-text">+998933218424 +998993465527</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="logo">
+                    <a href="#home"><img src="./images/logo/default-monochrome.svg" alt="logo"></a>
+                </div>
+                <div class="copyright">© "Vital Force" edu, 2022</div>
+                <a href="#home" class="top"><i class="fas fa-hand-point-up"></i></a>
+            </div>
+        </div>
+    </footer>
     <script src="main.js"></script>
 </body>
 

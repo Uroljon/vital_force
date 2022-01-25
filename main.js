@@ -26,7 +26,7 @@ document.querySelectorAll('.carousel-items-arrow').forEach((btn) => {
     btn.addEventListener("click", (e) => {
 
         document.querySelector('.carousel-item.active').classList.remove("active");
-        document.querySelectorAll('.carousel-item.opacity').forEach((item)=>{
+        document.querySelectorAll('.carousel-item.opacity').forEach((item) => {
             item.classList.remove("opacity");
         })
 
@@ -50,34 +50,88 @@ document.querySelectorAll('.teachers-control').forEach((btn) => {
         active.classList.remove("active");
 
         if (e.target.classList.contains("arrow-prev")) { //prev bosilsa:
-            if(active.previousElementSibling){
+            if (active.previousElementSibling) {
                 active.previousElementSibling.classList.add("active")
-            }else{
-                all[all.length-1].classList.add("active")
+            } else {
+                all[all.length - 1].classList.add("active")
             }
         } else if (e.target.classList.contains("arrow-next")) { //next bosilsa:
-            if(active.nextElementSibling){
+            if (active.nextElementSibling) {
                 active.nextElementSibling.classList.add("active")
-            }else{
+            } else {
                 all[0].classList.add("active")
             }
         }
     });
 })
 
-
-window.addEventListener("DOMContentLoaded", ()=>{
-    carousel_init(array);
-
-});
 // scroolling
 let last_scroll = 0;
-document.addEventListener("scroll", (e)=>{
-    if(window.scrollY > last_scroll+20){
+document.addEventListener("scroll", (e) => {
+    if (window.scrollY > last_scroll + 20) {
         document.querySelector('.navbar').style.top = "-100px";
-        
-    }else if(window.scrollY < last_scroll-20){
+
+    } else if (window.scrollY < last_scroll - 20) {
         document.querySelector('.navbar').style.top = "0px";
     }
     last_scroll = window.scrollY;
-})
+});
+
+// results slider
+document.querySelectorAll('.results-wrapper a').forEach((item, index) => {
+    item.style.left = `${index * 260}px`;
+});
+
+// LANGUAGE
+let lang = "en";
+let en = {
+    nav: [
+        "HOME", "OUR COURSES", "OUR TEACHERS", "EXPLORE US", "OUR STUDENTS", "OUR RESULTS", "OUR LOCATION"
+    ],
+    contact: "Contact",
+    hero_title: "Learn english.<br>Achieve your dreams!",
+    hero_description: "Explore your hidden potential in an exclusive environment and have fun!",
+    explore_btn: "Explore now !",
+
+}
+let uz = {
+    nav: [
+        "Bosh sahifa", "Kurslarimiz", "Ustozlarimiz", "Biz haqimizda", "Talabalarimiz", "Natijalarimiz", "Manzilimiz"
+    ],
+    contact: "Aloqa",
+    hero_title: "Ingliz tilini o'rganing.<br>Orzularingizga yeting!",
+    hero_description: "Yashirin qobiliyatingizni eksklyuziv muhitda kashf eting va zavqlaning!",
+    explore_btn: "Hozir kashf eting!",
+
+}
+function set_lang(lang) {
+    switch (lang) {
+        case "uz": {
+            languify(uz)
+            break;
+        }
+        case "en": {
+            languify(en)
+            break;
+        }
+        case "ru": {
+            languify(ru)
+        }
+    }
+    function languify(lan) {
+        // nav
+        document.querySelectorAll('.navbar-nav li a').forEach((nav, index) => {
+            nav.textContent = `${lan.nav[index]}`
+        });
+        document.querySelector('#current_lang').textContent = lang;
+        document.querySelector('.contact-btn').textContent = lan.contact;
+        // hero
+        document.querySelector('.hero-title').innerHTML = lan.hero_title;
+        document.querySelector('.hero-description').textContent = lan.hero_description;
+
+    }
+}
+window.addEventListener("DOMContentLoaded", () => {
+    carousel_init(array);
+
+});
