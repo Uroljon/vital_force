@@ -43,6 +43,10 @@ body {
   background: #ff584e;
 }
 
+.modal {
+  display: none;
+}
+
 header {
   background: #132554;
   color: white;
@@ -70,10 +74,6 @@ header nav .navbar-wrapper .navbar-left a {
   width: 100%;
   height: 50px;
   display: block;
-  text-align: center;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
   padding: 10px 0;
   overflow: hidden;
 }
@@ -191,6 +191,9 @@ header nav .navbar-wrapper .navbar-right .contact-btn {
   border: none;
   height: 50px;
 }
+header nav .navbar-wrapper .navbar-right .burger {
+  display: none;
+}
 header nav a {
   color: white;
   text-transform: uppercase;
@@ -201,7 +204,7 @@ header .hero_section {
 }
 header .hero_section .hero-wrapper {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 1fr;
   grid-template-rows: 642px;
   gap: 20px;
 }
@@ -255,7 +258,7 @@ header .hero_section .hero-wrapper .hero-right .message-box {
   display: flex;
   align-items: center;
   position: absolute;
-  left: -20%;
+  left: -15%;
   bottom: 35%;
   z-index: 2;
 }
@@ -747,9 +750,207 @@ footer .footer-wrapper .top {
     transform: translate(0px);
   }
 }
-@media (min-width: 576px) {
+@media (max-width: 768px) {
   .container {
-    width: 540px;
+    width: auto;
+  }
+
+  .modal {
+    z-index: 8;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .modal.active {
+    display: block;
+  }
+  .modal i {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 3rem;
+    color: white;
+  }
+  .modal .navbar-nav {
+    height: 100%;
+    padding-top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal .navbar-nav li {
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+  }
+  .modal .navbar-nav li a {
+    color: white;
+  }
+
+  header {
+    padding-top: 43px;
+    position: relative;
+  }
+  header nav {
+    padding: 0.7rem 0;
+  }
+  header nav .navbar-wrapper {
+    grid-template-columns: 50% 50%;
+  }
+  header nav .navbar-wrapper .navbar-middle {
+    display: none;
+  }
+  header nav .navbar-wrapper .navbar-right {
+    grid-template-columns: auto auto;
+    justify-content: end;
+  }
+  header nav .navbar-wrapper .navbar-right .language .fa-globe {
+    font-size: 1.7rem;
+  }
+  header nav .navbar-wrapper .navbar-right .language .fa-sort-down {
+    font-size: 1.2rem;
+  }
+  header nav .navbar-wrapper .navbar-right #lang_dropdown {
+    padding: 20px 50%;
+  }
+  header nav .navbar-wrapper .navbar-right .contact-btn {
+    display: none;
+  }
+  header nav .navbar-wrapper .navbar-right .burger {
+    display: block;
+    font-size: 1.8rem;
+  }
+  header .hero_section {
+    width: 100vw;
+    padding-top: 50px;
+  }
+  header .hero_section .hero-wrapper {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: 642px;
+    gap: 20px;
+  }
+  header .hero_section .hero-wrapper .hero-left {
+    padding-top: 115px;
+  }
+  header .hero_section .hero-wrapper .hero-left h2 {
+    font-size: 2rem;
+    line-height: unset;
+    font-weight: 600;
+  }
+  header .hero_section .hero-wrapper .hero-left p {
+    font-size: 25px;
+    font-weight: 500;
+    opacity: 0.5;
+    padding-right: 20%;
+    line-height: 37.5px;
+    margin: 70px 0 90px 0;
+  }
+  header .hero_section .hero-wrapper .hero-left .more-btn {
+    background: linear-gradient(129.54deg, #f1352c 15.57%, #ff584e 95.03%);
+    border-radius: 27px;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+    line-height: 37px;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0 50px 15%;
+    padding: 20px 25px;
+  }
+  header .hero_section .hero-wrapper .hero-left .more-btn:active {
+    transition: 100ms;
+    transform: scale(0.95);
+  }
+  header .hero_section .hero-wrapper .hero-right {
+    position: relative;
+  }
+  header .hero_section .hero-wrapper .hero-right .message-box {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 2px 2px 2px #083347;
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: -15%;
+    bottom: 35%;
+    z-index: 2;
+  }
+  header .hero_section .hero-wrapper .hero-right .message-box .icon {
+    background: #f88c3d;
+    width: 50px;
+    height: 50px;
+    margin-right: 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .hero_section .hero-wrapper .hero-right .message-box .icon i {
+    font-size: 30px;
+  }
+  header .hero_section .hero-wrapper .hero-right .message-box .message {
+    letter-spacing: 0.02em;
+    line-height: 180%;
+  }
+  header .hero_section .hero-wrapper .hero-right .message-box .message h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #595959;
+  }
+  header .hero_section .hero-wrapper .hero-right .message-box .message span {
+    font-size: 20px;
+    color: #545567;
+    font-weight: 600;
+  }
+  header .hero_section .hero-wrapper .hero-right img {
+    position: absolute;
+    bottom: -13.5%;
+  }
+  header .hero_section .hero-wrapper .hero-right .dot {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+  }
+  header .hero_section .hero-wrapper .hero-right .wave {
+    position: absolute;
+    bottom: -7%;
+    left: -10%;
+  }
+  header .hero_section::before {
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 89%;
+    width: 54%;
+    height: 162px;
+    border-radius: 0 0 50px;
+    transform: rotate(12deg);
+    background-color: #132554;
+  }
+  header .hero_section::after {
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 89%;
+    right: 0;
+    width: 54%;
+    height: 162px;
+    border-radius: 0 0 0 50px;
+    transform: rotate(-12deg);
+    background-color: #132554;
   }
 }
 @media (min-width: 768px) {
