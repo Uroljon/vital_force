@@ -264,3 +264,5 @@ window.addEventListener("DOMContentLoaded", () => {
     carousel_init(array);
     typewriter()
 });
+
+// checking github
