@@ -790,8 +790,7 @@ footer .footer-wrapper .top {
   }
 
   header {
-    padding-top: 43px;
-    position: relative;
+    padding-top: 50px;
   }
   header nav {
     padding: 0.7rem 0;
@@ -823,134 +822,102 @@ footer .footer-wrapper .top {
     font-size: 1.8rem;
   }
   header .hero_section {
-    width: 100vw;
-    padding-top: 50px;
+    padding-top: unset;
   }
   header .hero_section .hero-wrapper {
     display: grid;
-    grid-template-columns: 50% 1fr;
-    grid-template-rows: 642px;
-    gap: 20px;
+    grid-template-columns: 100%;
+    grid-template-rows: 550px;
+    gap: 0px;
   }
   header .hero_section .hero-wrapper .hero-left {
-    padding-top: 115px;
+    padding-top: 50px;
   }
   header .hero_section .hero-wrapper .hero-left h2 {
-    font-size: 2rem;
+    font-size: 8vw;
+    text-align: center;
     line-height: unset;
-    font-weight: 600;
   }
   header .hero_section .hero-wrapper .hero-left p {
-    font-size: 25px;
-    font-weight: 500;
-    opacity: 0.5;
-    padding-right: 20%;
-    line-height: 37.5px;
-    margin: 70px 0 90px 0;
+    font-size: 1.3rem;
+    line-height: unset;
+    padding-right: 30%;
+    margin: 40px 0 50px 0;
   }
   header .hero_section .hero-wrapper .hero-left .more-btn {
     background: linear-gradient(129.54deg, #f1352c 15.57%, #ff584e 95.03%);
     border-radius: 27px;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 1.2rem;
     color: white;
     line-height: 37px;
     border: none;
     padding: 15px 25px;
     cursor: pointer;
-    display: inline-block;
-    margin: 0 0 50px 15%;
-    padding: 20px 25px;
+    border-radius: 1rem;
+    margin: 140px 0 0;
+    padding: 5px 10px;
   }
   header .hero_section .hero-wrapper .hero-left .more-btn:active {
     transition: 100ms;
     transform: scale(0.95);
   }
   header .hero_section .hero-wrapper .hero-right {
-    position: relative;
+    position: unset;
   }
   header .hero_section .hero-wrapper .hero-right .message-box {
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 2px 2px 2px 2px #083347;
-    -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: -15%;
-    bottom: 35%;
-    z-index: 2;
+    padding: 5px 10px;
+    border-radius: 0.5rem;
+    left: 1%;
+    bottom: 27%;
   }
   header .hero_section .hero-wrapper .hero-right .message-box .icon {
-    background: #f88c3d;
-    width: 50px;
-    height: 50px;
-    margin-right: 24px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
   }
   header .hero_section .hero-wrapper .hero-right .message-box .icon i {
-    font-size: 30px;
+    font-size: 25px;
   }
   header .hero_section .hero-wrapper .hero-right .message-box .message {
-    letter-spacing: 0.02em;
-    line-height: 180%;
+    letter-spacing: unset;
+    line-height: unset;
   }
   header .hero_section .hero-wrapper .hero-right .message-box .message h2 {
-    font-weight: bold;
-    font-size: 24px;
-    color: #595959;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.76);
   }
   header .hero_section .hero-wrapper .hero-right .message-box .message span {
-    font-size: 20px;
-    color: #545567;
-    font-weight: 600;
+    font-size: 1rem;
   }
-  header .hero_section .hero-wrapper .hero-right img {
+  header .hero_section .hero-wrapper .hero-right .hero-image {
     position: absolute;
-    bottom: -13.5%;
+    width: 500px;
+    bottom: -60px;
+    left: 10%;
   }
   header .hero_section .hero-wrapper .hero-right .dot {
-    position: absolute;
-    top: 10%;
-    left: 20%;
+    width: 40px;
+    top: 5%;
+    left: unset;
+    right: 2%;
   }
   header .hero_section .hero-wrapper .hero-right .wave {
-    position: absolute;
-    bottom: -7%;
-    left: -10%;
+    width: 80px;
+    bottom: 10%;
+    left: 10%;
   }
   header .hero_section::before {
-    content: "";
-    z-index: -1;
-    display: block;
-    position: absolute;
-    top: 89%;
-    width: 54%;
-    height: 162px;
-    border-radius: 0 0 50px;
-    transform: rotate(12deg);
-    background-color: #132554;
+    top: 86%;
+    height: 140px;
+    width: 65%;
+    right: 40%;
   }
   header .hero_section::after {
-    content: "";
-    z-index: -1;
-    display: block;
-    position: absolute;
-    top: 89%;
+    top: 86%;
+    height: 140px;
+    width: 65%;
     right: 0;
-    width: 54%;
-    height: 162px;
-    border-radius: 0 0 0 50px;
-    transform: rotate(-12deg);
-    background-color: #132554;
   }
 }
 @media (min-width: 768px) {

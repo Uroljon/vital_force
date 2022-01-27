@@ -251,7 +251,14 @@ function typewriter() {
     }
 }
 
-
+document.querySelector('.close-modal').addEventListener("click",toggle_modal);
+document.querySelector('.burger').addEventListener("click", toggle_modal);
+document.querySelectorAll('.modal li').forEach(_=>{
+    _.addEventListener("click", toggle_modal);
+});
+function toggle_modal() {
+    document.querySelector('.modal').classList.toggle("active");
+}
 
 window.addEventListener("DOMContentLoaded", () => {
     carousel_init(array);
