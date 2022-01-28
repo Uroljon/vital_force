@@ -21,7 +21,7 @@ a {
     margin: 0 auto;
 }
 body {
-    overflow-x: hidden;
+    // overflow-x: hidden;
     background-color: #e5e5e5;
 }
 .heading {
@@ -250,6 +250,8 @@ header {
     .hero_section {
         padding-top: 50px;
         position: relative;
+        overflow-x: clip;
+        // overflow-y: visible;
         .hero-wrapper {
             display: grid;
             grid-template-columns: 50% 1fr;
@@ -336,30 +338,33 @@ header {
                 }
             }
         }
-        &::before {
-            content: "";
-            z-index: -1;
-            display: block;
+        .taglik {
             position: absolute;
-            top: 89%;
-            width: 54%;
-            height: 162px;
-            border-radius: 0 0 50px;
-            transform: rotate(12deg);
-            background-color: #132554;
-        }
-        &::after {
-            content: "";
+            bottom: -79px;
+            display: grid;
+            grid-template-columns: 50% 50%;
             z-index: -1;
-            display: block;
-            position: absolute;
-            top: 89%;
-            right: 0;
-            width: 54%;
-            height: 162px;
-            border-radius: 0 0 0 50px;
-            transform: rotate(-12deg);
-            background-color: #132554;
+            height: 180px;
+            width: 100%;
+            .side{
+                position: relative;
+                span{
+                    position: absolute;
+                    width: 900px;
+                    height: 180px;
+                    background-color: #132554;
+                    &.left {
+                        right: -65px;
+                        border-radius: 0 0 50px;
+                        transform: rotate(12deg);
+                    }
+                    &.right {
+                        left: -65px;
+                        border-radius: 0 0 0 50px;
+                        transform: rotate(-12deg);
+                    }
+                }
+            }
         }
     }
 }
@@ -729,10 +734,10 @@ footer {
         bottom: 0;
         left: 0;
         right: 0;
-        &.active{
+        &.active {
             display: block;
         }
-        i{
+        i {
             position: absolute;
             right: 2rem;
             top: 2rem;
@@ -741,7 +746,7 @@ footer {
         }
         .navbar-nav {
             height: 100%;
-            padding-top: 40%;
+            padding-top: 25%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -753,6 +758,10 @@ footer {
                 }
             }
         }
+    }
+    .heading {
+        font-size: 6vw;
+        line-height: unset;
     }
     header {
         padding-top: 50px;
@@ -788,43 +797,45 @@ footer {
             }
         }
         .hero_section {
-            padding-top: unset;
             .hero-wrapper {
-                display: grid;
-                grid-template-columns: 100%;
-                grid-template-rows: 550px;
-                gap: 0px;
+                grid-template-columns: 99% 1fr;
+                grid-template-rows: 470px;
+                gap: unset;
                 .hero-left {
-                    padding-top: 50px;
+                    position: relative;
+                    padding-top: 30px;
                     h2 {
-                        font-size: 8vw;
-                        text-align: center;
+                        font-size: 7vw;
                         line-height: unset;
+                        text-align: center;
                     }
                     p {
                         font-size: 1.3rem;
+                        padding-right: 25%;
+                        padding-left: 5%;
                         line-height: unset;
-                        padding-right: 30%;
-                        margin: 40px 0 50px 0;
+                        margin: 60px 0 200px 0;
                     }
                     .more-btn {
-                        @include button(1.2rem);
-                        border-radius: 1rem;
-                        margin: 140px 0 0;
-                        padding: 5px 10px;
+                        @include button(1rem);
+                        margin: unset;
+                        padding: 5px 25px;
+                        position: absolute;
+                        bottom: -90px;
+                        left: 15px;
                     }
                 }
                 .hero-right {
-                    position: unset;
                     .message-box {
                         padding: 5px 10px;
-                        border-radius: 0.5rem;
-                        left: 1%;
-                        bottom: 27%;
+                        border-radius: 10px;
+                        left: -370px;
+                        bottom: 10%;
                         .icon {
                             width: 40px;
                             height: 40px;
                             margin-right: 10px;
+                            border-radius: 5px;
                             i {
                                 font-size: 25px;
                             }
@@ -833,68 +844,427 @@ footer {
                             letter-spacing: unset;
                             line-height: unset;
                             h2 {
-                                font-size: 1.2rem;
-                                color: rgba(0, 0, 0, 0.76);
+                                padding-top: 5px;
+                                font-size: 1.1rem;
+                                line-height: 0.7rem;
                             }
                             span {
                                 font-size: 1rem;
                             }
                         }
                     }
-                    .hero-image {
-                        position: absolute;
-                        width: 500px;
-                        bottom: -60px;
-                        left: 10%;
+                    img {
+                        bottom: -30.5%;
+                        left: -320px;
+                        width: 450px;
                     }
                     .dot {
-                        width: 40px;
-                        top: 5%;
-                        left: unset;
-                        right: 2%;
+                        top: 0;
+                        left: -40px;
+                        width: 50px;
                     }
                     .wave {
-                        width: 80px;
-                        bottom: 10%;
-                        left: 10%;
+                        bottom: -7%;
+                        left: -530px;
+                        height: 2rem;
                     }
                 }
             }
+        }
+    }
+    #courses {
+        padding: 200px 0 50px 0;
+        .courses-wrapper {
+            grid-template-columns: 100%;
+            grid-template-rows: auto auto;
+            gap: 40px;
+            .courses-left {
+                text-align: center;
+                h3 {
+                    font-size: 6vw;
+                    line-height: unset;
+                }
+                h2 {
+                    margin: 0;
+                    font-size: 9vw;
+                    line-height: unset;
+                }
+                p {
+                    font-size: 5vw;
+                    line-height: unset;
+                    margin-bottom: 30px;
+                }
+                .more-btn {
+                    @include button(16px);
+                }
+            }
+            .courses-right {
+                $carousel_height: 200px;
+                $carousel_item_height: $carousel_height - $carousel_height * 0.2;
+                .carousel {
+                    .carousel-items {
+                        height: $carousel_height;
+                        .carousel-item {
+                            height: $carousel_item_height;
+                        }
+                    }
+                  
+                }
+            }
+        }
+    }
+    #teachers {
+        padding: 50px 0 50px;
+        .heading{
+            padding-bottom: 30px;
+
+        }
+        .teachers-wrapper {
+            .teacher-item {
+                grid-template-columns: 43% 50%;
+                gap: $gap;
+                .teacher-left img {
+                    height: 250px;
+                    border-radius: 70px;
+                }
+                .teacher-right {
+                    .teacher-info {
+                        padding: 0 0 20px 0;
+                        .avatar {
+                            width: 40px;
+                            height: 40px;
+                            margin-right: 5px;
+                            img {
+                                height: 100%;
+                            }
+                        }
+                        .name {
+                            font-size: 4vw;
+                            line-height: unset;
+                        }
+                        .position {
+                            font-size: 3vw;
+                            line-height: unset;
+                        }
+                    }
+                    .teacher-quote {
+                        font-size: 3vw;
+                        line-height: unset;
+                        padding-bottom: 15px;
+                    }
+                    .stars {
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .controls {
+            padding-top: 380px;
+        }
+    }
+    #contact{
+        overflow: hidden;
+    }
+}
+// md
+@media (max-width: 992px) and (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+    header {
+        nav {
+            font-size: 0.7rem;
+            .navbar-wrapper {
+                .navbar-left {
+                    a {
+                        padding: 5px 0 0 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                .navbar-middle {
+                    .navbar-nav {
+                        gap: 0.8rem;
+                        li > a {
+                            padding-top: 5px;
+                        }
+                    }
+                }
+                .navbar-right {
+                    gap: 0.5rem;
+                    .contact-btn {
+                        padding: 0 0.2rem;
+                        border-radius: 15px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+        .hero_section {
+            .hero-wrapper {
+                grid-template-columns: 70% 1fr;
+                grid-template-rows: 550px;
+                .hero-left {
+                    padding-top: 150px;
+                    h2 {
+                        font-size: 2.3rem;
+                        line-height: unset;
+                    }
+                    p {
+                        font-size: 20px;
+                        padding-right: 35%;
+                        line-height: unset;
+                        margin: 150px 0 20px 0;
+                    }
+                    .more-btn {
+                        @include button(20px);
+                        margin: 10px 0 50px 0;
+                        padding: 5px 15px;
+                    }
+                }
+                .hero-right {
+                    .message-box {
+                        padding: 5px 15px;
+                        border-radius: 10px;
+                        left: -210%;
+                        bottom: 33%;
+                        .icon {
+                            width: 45px;
+                            height: 45px;
+                            margin-right: 15px;
+                            i {
+                                font-size: 25px;
+                            }
+                        }
+                        .message {
+                            letter-spacing: unset;
+                            line-height: unset;
+                            h2 {
+                                font-weight: bold;
+                                font-size: 1.2rem;
+                            }
+                            span {
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                    img {
+                        position: absolute;
+                        bottom: -23.5%;
+                        left: -180%;
+                    }
+                    .dot {
+                        top: 10%;
+                        left: -80%;
+                        width: 2rem;
+                    }
+                    .wave {
+                        bottom: -15%;
+                        left: -110%;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    .heading {
+        font-size: 35px;
+        line-height: unset;
+    }
+    #courses {
+        padding: 200px 0 80px 0;
+        .courses-wrapper {
+            grid-template-columns: 30% 1fr;
+            gap: $gap;
+            .courses-left {
+                h3 {
+                    font-size: 20px;
+                    line-height: unset;
+                }
+                h2 {
+                    margin: 5px 0;
+                    font-size: 35px;
+                    line-height: unset;
+                }
+                p {
+                    font-size: 20px;
+                    line-height: unset;
+                }
+                .more-btn {
+                    @include button(15px);
+                    padding: 8px 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #teachers {
+        padding: 50px 0 50px;
+        .teachers-wrapper {
+            .teacher-item {
+                grid-template-columns: 43% 50%;
+                gap: $gap *2;
+                .teacher-left img {
+                    height: 340px;
+                    border-radius: 80px;
+                }
+                .teacher-right {
+                    .teacher-info {
+                        padding: 0 0 20px 0;
+                        .avatar {
+                            width: 60px;
+                            height: 60px;
+                            margin-right: 15px;
+                            img {
+                                height: 100%;
+                            }
+                        }
+                        .name {
+                            font-size: 24px;
+                            line-height: unset;
+                        }
+                        .position {
+                            font-size: 18px;
+                            line-height: unset;
+                        }
+                    }
+                    .teacher-quote {
+                        font-size: 18px;
+                        line-height: unset;
+                        padding-bottom: 15px;
+                    }
+                    .stars {
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .controls {
+            padding-top: 380px;
+        }
+    }
+    #subscribe {
+        padding: 10px 0 60px;
+        .subscribe-wrapper {
+            padding: 100px 0;
+            border-radius: 50px;
             &::before {
-                top: 86%;
-                height: 140px;
-                width: 65%;
-                right: 40%;
+                right: 5rem;
+                width: 32px;
+                height: 41px;
+                background-size: cover;
             }
             &::after {
-                top: 86%;
-                height: 140px;
-                width: 65%;
-                right: 0;
+                left: 5rem;
+                width: 32px;
+                height: 41px;
+                background-size: cover;
+            }
+            h2 {
+                font-size: 30px;
+                width: 50%;
+            }
+            p {
+                font-size: 20px;
+                line-height: unset;
+            }
+            a {
+                line-height: unset;
+                background: red;
+            }
+        }
+    }
+    #contact {
+        padding-bottom: 50px;
+        .contact-wrapper {
+            .contact-left {
+                border-radius: 1rem;
+                iframe{
+                    height: 350px;
+                }
+            }
+            .contact-right {
+                p {
+                    font-size: 1.6rem;
+                }
+                div {
+                    font-size: 1.2rem;
+                }
             }
         }
     }
 }
-// md
-@media (min-width: 768px) {
-    .container {
-        width: 720px;
-    }
-}
 // lg
-@media (min-width: 992px) {
+@media (max-width: 1200px) and (min-width: 992px) {
     .container {
         width: 960px;
     }
+    header {
+        .hero_section {
+            .hero-wrapper {
+                grid-template-columns: 55% 1fr;
+                .hero-left {
+                    padding-top: 100px;
+                    h2 {
+                        font-size: 3rem;
+                        line-height: unset;
+                    }
+                    p {
+                        margin: 70px 0 80px 0;
+                    }
+                    .more-btn {
+                        margin: 0 0 50px 10%;
+                    }
+                }
+                .hero-right {
+                    .message-box {
+                        left: -18%;
+                        bottom: 36%;
+                    }
+                    img {
+                        bottom: -12%;
+                    }
+                }
+            }
+        }
+    }
+    .heading {
+        font-size: 35px;
+    }
 }
 // xl
-@media (min-width: 1200px) {
+@media (max-width: 1400px) and (min-width: 1200px) {
     .container {
         width: 1140px;
     }
+    header {
+        .hero_section {
+            .hero-wrapper {
+                .hero-left {
+                    h2 {
+                        font-size: 3rem;
+                        line-height: unset;
+                    }
+                }
+            }
+        }
+    }
+    .student{
+        &:nth-last-child(1){
+            display: none;
+        }
+        &:nth-last-child(2){
+            display: none;
+        }
+    }
 }
+
 // xxl
-@media (min-width: 1400px) {
+@media (min-width: 1401px) {
     .container {
         width: 1320px;
     }

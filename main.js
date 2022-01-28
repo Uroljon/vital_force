@@ -88,7 +88,7 @@ let en = {
     nav: [
         "HOME", "OUR COURSES", "OUR TEACHERS", "EXPLORE US", "OUR STUDENTS", "OUR RESULTS", "OUR LOCATION"
     ],
-    contact: "Contact",
+    contact_btn: "Contact",
     hero_title: "Learn english.<br>Achieve your dreams!",
     hero_description: "Explore your hidden potential in an exclusive environment and have fun!",
     explore_btn: "Explore now !",
@@ -114,7 +114,7 @@ let uz = {
     nav: [
         "Bosh sahifa", "Kurslarimiz", "Ustozlarimiz", "Biz haqimizda", "Talabalarimiz", "Natijalarimiz", "Manzilimiz"
     ],
-    contact: "Aloqa",
+    contact_btn: "Aloqa",
     hero_title: "Ingliz tilini o'rganing.<br>Orzularingizga yeting!",
     hero_description: "Yashirin qobiliyatingizni eksklyuziv muhitda kashf eting va zavqlaning!",
     explore_btn: "Hozir kashf eting!",
@@ -140,7 +140,7 @@ let ru = {
     nav: [
         "ДОМАШНЯЯ СТРАНИЦА", "НАШИ КУРСЫ", "НАШИ УЧИТЕЛЯ", "О НАС", "НАШИ СТУДЕНТЫ", "НАШИ РЕЗУЛЬТАТЫ", "НАШЕ МЕСТОПОЛОЖЕНИЕ"
     ],
-    contact: "Контакт",
+    contact_btn: "Контакт",
     hero_title: "Учите английский.<br>Достигните своей мечты!",
     hero_description: "Раскройте свой скрытый потенциал и получайте удовольствие!",
     explore_btn: "Исследуйте сейчас!",
@@ -183,7 +183,7 @@ function set_lang(lang) {
             nav.textContent = `${lan.nav[index]}`
         });
         document.querySelector('#current_lang').textContent = lang;
-        document.querySelector('.contact-btn').textContent = lan.contact;
+        document.querySelector('.contact-btn').textContent = lan.contact_btn;
         // hero
         document.querySelector('.hero-title').innerHTML = lan.hero_title;
         document.querySelector('.hero-description').textContent = lan.hero_description;
