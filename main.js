@@ -41,7 +41,6 @@ document.querySelectorAll('.carousel-items-arrow').forEach((btn) => {
         }
     });
 });
-
 // teachers controls
 document.querySelectorAll('.teachers-control').forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -64,7 +63,6 @@ document.querySelectorAll('.teachers-control').forEach((btn) => {
         }
     });
 })
-
 // scroolling
 let last_scroll = 0;
 document.addEventListener("scroll", (e) => {
@@ -81,7 +79,6 @@ document.addEventListener("scroll", (e) => {
 document.querySelectorAll('.results-wrapper a').forEach((item, index) => {
     item.style.left = `${index * 260}px`;
 });
-
 // LANGUAGE
 let lang = "en";
 let en = {
@@ -101,6 +98,7 @@ let en = {
     teacher_title: "Our experienced teachers",
     teacher_quote: ["Over time, small daily improvements can lead to amazing results. Investing in yourself is the best investment you can make. It not only improves your life, but also the lives of those around you.", "We are all teachers, or should be. Anyone who relays experience to another person is a teacher. Not to transmit your experience is to betray it."],
     students_title: "Our outstanding students",
+    load_student: "Show more",
     subcribe_title: "Subscribe To Our Telegram channel",
     subcribe_text: "Prepare yourself and take action today!",
     subscribe_btn: "OK, lets's go!",
@@ -127,6 +125,7 @@ let uz = {
     teacher_position: ["Bosh direktor, o'qituvchi", "O'qituvchi"],
     teacher_quote: ["Vaqt o'tishi bilan kunlik kichik yaxshilanishlar ajoyib natijalarga olib keladi. O'zingizga sarmoya kiritish - bu siz amalga oshiradigan eng yaxshi sarmoyadir. Bu nafaqat sizning hayotingizni yaxshilaydi, balki atrofdagilarning hayotini yaxshilaydi.", "Biz hammamiz o'qituvchimiz yoki bo'lishimiz kerak. Tajribani boshqa odamga o'tkazgan har bir kishi o'qituvchidir. Tajribangizni uzatmaslik - unga xiyonat qilishdir."],
     students_title: "Bizning ajoyib talabalarimiz",
+    load_student: "Ko'proq ko'rish",
     subcribe_title: "Telegram kanalimizga obuna bo'ling",
     subcribe_text: "O'zingizni tayyorlang va bugunoq harakat qiling!",
     subscribe_btn: "OK, qani ketdik!",
@@ -153,6 +152,7 @@ let ru = {
     teacher_title: "Наши опытные преподаватели",
     teacher_quote: ["Со временем небольшие ежедневные улучшения могут привести к потрясающим результатам. Инвестиции в себя — лучшая инвестиция, которую вы можете сделать. Она улучшает не только вашу жизнь, но и жизнь окружающих вас людей", "Мы все учителя, или должны быть. Любой, кто передает опыт другому человеку, является учителем. Не передавать свой опыт — значит предать его."],
     students_title: "Наши лучшие студенты",
+    load_student: "Показать больше",
     subcribe_title: "Подписывайтесь на наш Telegram-канал",
     subcribe_text: "Подготовьтесь и действуйте уже сегодня!",
     subscribe_btn: "Хорошо пойдем!",
@@ -206,6 +206,7 @@ function set_lang(lang) {
         });
         // students
         document.querySelector('#students .heading').textContent = lan.students_title;
+        document.querySelector('.students-btn').textContent = lan.load_student;
         // subscribe
         document.querySelector('#subscribe .heading').textContent = lan.subcribe_title;
         document.querySelector('#subscribe p').textContent = lan.subcribe_text;
@@ -219,6 +220,7 @@ function set_lang(lang) {
         document.querySelector('.contact').textContent = lan.contact;
     }
 }
+// typewriter effect
 let words = en.message_text;
 function typewriter() {
     let target = document.querySelector('#message_text');
@@ -250,7 +252,7 @@ function typewriter() {
         }
     }
 }
-
+// modal on navbar
 document.querySelector('.close-modal').addEventListener("click",toggle_modal);
 document.querySelector('.burger').addEventListener("click", toggle_modal);
 document.querySelectorAll('.modal li').forEach(_=>{
@@ -259,6 +261,29 @@ document.querySelectorAll('.modal li').forEach(_=>{
 function toggle_modal() {
     document.querySelector('.modal').classList.toggle("active");
 }
+// conditional rendering #student section for <768px viewpoint
+function media_js(){
+    let num_of_photos = 25;
+    if(document.body.clientWidth < 768 && document.body.clientWidth > 576){
+        // students renders controller
+
+        document.querySelector('.students-wrapper').innerHTML = '';
+        for (let i = 1; i <= 6; i++) {
+            document.querySelector('.students-wrapper').innerHTML += `<a href="./students/${i}.jpg" target="_blank" class="student"><img src="./students/${i}.jpg" alt="${i}"></a>`
+        }
+        
+    } else if(document.body.clientWidth < 576){
+        if(document.body.clientWidth < 500){
+            document.querySelector('.students-wrapper').innerHTML = '';
+            for (let i = 1; i <= 3; i++) {
+                document.querySelector('.students-wrapper').innerHTML += `<a href="./students/${i}.jpg" target="_blank" class="student"><img src="./students/${i}.jpg" alt="${i}"></a>`
+            }
+        }
+        // hero bottom controller
+        document.querySelector('.hero-image').style.bottom = `-${(document.body.clientWidth-300)/20 + 141}px`;
+    }
+}
+media_js()
 
 window.addEventListener("DOMContentLoaded", () => {
     carousel_init(array);
