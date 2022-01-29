@@ -758,10 +758,14 @@ footer .footer-wrapper .top {
 }
 @media (max-width: 576px) {
   header nav {
-    padding: 1rem 1.5rem !important;
+    padding: 1rem !important;
+  }
+  header nav .navbar-wrapper .navbar-left a {
+    width: 130px !important;
+    padding-top: 1rem;
   }
   header .hero_section .hero-wrapper {
-    grid-template-rows: 330px !important;
+    grid-template-rows: 350px !important;
   }
   header .hero_section .hero-wrapper .hero-left {
     padding-top: unset !important;
@@ -784,32 +788,21 @@ footer .footer-wrapper .top {
     cursor: pointer;
     bottom: -70px !important;
     left: 20px !important;
+    z-index: 3;
   }
   header .hero_section .hero-wrapper .hero-left .more-btn:active {
     transition: 100ms;
     transform: scale(0.95);
   }
   header .hero_section .hero-wrapper .hero-right .message-box {
-    padding: 5px 10px;
-    border-radius: 10px;
     left: -85vw !important;
-    bottom: 5% !important;
+    bottom: 26px;
   }
   header .hero_section .hero-wrapper .hero-right .message-box .icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 5px;
-  }
-  header .hero_section .hero-wrapper .hero-right .message-box .icon i {
-    font-size: 25px;
-  }
-  header .hero_section .hero-wrapper .hero-right .message-box .message {
-    letter-spacing: unset;
-    line-height: unset;
+    width: 35px !important;
+    height: 35px !important;
   }
   header .hero_section .hero-wrapper .hero-right .message-box .message h2 {
-    padding-top: 5px;
     font-size: 1rem !important;
     line-height: 0.7rem;
   }
@@ -830,197 +823,90 @@ footer .footer-wrapper .top {
     left: -90vw !important;
   }
 
-  #courses {
-    padding: 200px 0 50px 0;
-  }
-  #courses .courses-wrapper {
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto;
-    gap: 50px;
-  }
-  #courses .courses-wrapper .courses-left {
-    text-align: center;
-  }
-  #courses .courses-wrapper .courses-left h3 {
-    font-size: 5vw;
-    line-height: unset;
-  }
   #courses .courses-wrapper .courses-left h2 {
-    margin: 0;
-    font-size: 7vw;
-    line-height: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem !important;
   }
   #courses .courses-wrapper .courses-left p {
-    font-size: 4vw;
-    line-height: 2rem;
-    margin-bottom: 35px;
-  }
-  #courses .courses-wrapper .courses-left .more-btn {
-    background: linear-gradient(129.54deg, #f1352c 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
-    font-weight: 600;
-    font-size: 16px;
-    color: white;
-    line-height: 37px;
-    border: none;
-    padding: 15px 25px;
-    cursor: pointer;
-  }
-  #courses .courses-wrapper .courses-left .more-btn:active {
-    transition: 100ms;
-    transform: scale(0.95);
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items {
-    height: 200px;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items .carousel-item {
-    height: 160px;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items-arrow,
-#courses .courses-wrapper .courses-right .carousel .our_work_button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: red;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items-arrow i,
-#courses .courses-wrapper .courses-right .carousel .our_work_button i {
-    pointer-events: none;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items-arrow.arrow-prev,
-#courses .courses-wrapper .courses-right .carousel .our_work_button.arrow-prev {
-    left: 0%;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items-arrow.arrow-next,
-#courses .courses-wrapper .courses-right .carousel .our_work_button.arrow-next {
-    left: 100%;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items-arrow.arrow-prev,
-#courses .courses-wrapper .courses-right .carousel .our_work_button.arrow-prev {
-    left: 1%;
-  }
-  #courses .courses-wrapper .courses-right .carousel .carousel-items-arrow.arrow-next,
-#courses .courses-wrapper .courses-right .carousel .our_work_button.arrow-next {
-    left: 99%;
+    line-height: unset !important;
   }
 
   #teachers {
-    padding: 50px 0 50px;
-  }
-  #teachers .heading {
-    padding-bottom: 10px;
+    padding: 40px 0 30px !important;
   }
   #teachers .teachers-wrapper .teacher-item {
-    grid-template-columns: 43% 50%;
-    grid-template-rows: 300px;
-    gap: 20px;
+    grid-template-columns: 30% 1fr !important;
+    grid-template-rows: 200px !important;
   }
   #teachers .teachers-wrapper .teacher-item .teacher-left img {
-    height: 250px;
-    border-radius: 70px;
+    height: 150px !important;
+    border-radius: 1rem !important;
   }
   #teachers .teachers-wrapper .teacher-item .teacher-right .teacher-info {
-    padding: 0 0 1vw 0;
-  }
-  #teachers .teachers-wrapper .teacher-item .teacher-right .teacher-info .avatar {
-    width: 45px;
-    height: 45px;
-    margin-right: 5px;
-  }
-  #teachers .teachers-wrapper .teacher-item .teacher-right .teacher-info .avatar img {
-    height: 100%;
-  }
-  #teachers .teachers-wrapper .teacher-item .teacher-right .teacher-info .name {
-    font-size: 3vw;
-    line-height: 1rem;
-  }
-  #teachers .teachers-wrapper .teacher-item .teacher-right .teacher-info .position {
-    font-size: 2.5vw;
-    line-height: unset;
+    padding: 0 0 2vw 0 !important;
   }
   #teachers .teachers-wrapper .teacher-item .teacher-right .teacher-quote {
-    font-size: 2.2vw;
-    max-height: 200px;
-    overflow: scroll;
-    text-overflow: clip;
-    line-height: unset;
-    padding-bottom: 7px;
+    font-size: 2.6vw !important;
+    padding-bottom: 0 !important;
   }
   #teachers .teachers-wrapper .teacher-item .teacher-right .stars i {
-    font-size: 25px;
+    font-size: 20px !important;
   }
   #teachers .controls {
-    padding-top: 300px;
-    z-index: 5;
+    padding-top: 220px !important;
   }
 
-  #students .students-btn {
-    display: block;
-    background: linear-gradient(129.54deg, #f1352c 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: white;
-    line-height: 37px;
-    border: none;
-    padding: 15px 25px;
-    cursor: pointer;
-    padding: 0.1rem 2rem;
-    border-radius: 1rem;
-    margin: 2rem auto -2rem auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+  #students .heading {
+    padding-bottom: 1rem !important;
   }
-  #students .students-btn:active {
-    transition: 100ms;
-    transform: scale(0.95);
+  #students .students-wrapper .student {
+    height: 200px !important;
   }
 
   #subscribe {
-    padding: 10px 0 60px;
+    padding: 10px 0 50px !important;
   }
   #subscribe .subscribe-wrapper {
-    padding: 100px 0;
-    border-radius: 50px;
+    padding: 50px 0 !important;
+    border-radius: 10px !important;
   }
   #subscribe .subscribe-wrapper::before {
-    right: 5rem;
-    width: 32px;
-    height: 41px;
-    background-size: cover;
+    right: 1.2rem !important;
+    top: 15px;
   }
   #subscribe .subscribe-wrapper::after {
-    left: 5rem;
-    width: 32px;
-    height: 41px;
-    background-size: cover;
+    left: 2rem !important;
   }
   #subscribe .subscribe-wrapper h2 {
-    font-size: 5vw;
-    width: 50%;
+    width: 80vw !important;
   }
   #subscribe .subscribe-wrapper p {
-    font-size: 20px;
-    line-height: unset;
+    font-size: 1rem !important;
   }
   #subscribe .subscribe-wrapper a {
-    line-height: unset;
-    background: red;
+    font-size: 1rem;
+    padding: 7px 15px;
+    border-radius: 0.9rem;
+  }
+
+  #results {
+    padding-bottom: 30px !important;
+  }
+  #results .heading {
+    padding-bottom: 1.2rem !important;
+  }
+  #results .results-wrapper {
+    height: 250px;
+  }
+  #results .results-wrapper a {
+    width: 250px;
+    height: 250px;
   }
 
   #contact {
     padding-bottom: 0.5rem !important;
+  }
+  #contact .heading {
+    padding-bottom: 1.2rem;
   }
   #contact .contact-wrapper {
     grid-template-columns: 100% !important;
@@ -1030,11 +916,22 @@ footer .footer-wrapper .top {
   }
   #contact .contact-wrapper .contact-right div {
     margin-bottom: 1rem !important;
+    font-size: 4vw !important;
   }
 
+  footer {
+    padding: 30px 0;
+  }
   footer .footer-wrapper .logo {
-    width: 22%;
-    top: 41%;
+    width: 24% !important;
+    top: 33px !important;
+  }
+  footer .footer-wrapper .top {
+    font-size: 1.5rem;
+  }
+  footer .footer-wrapper .copyright {
+    font-size: 0.8rem;
+    padding-left: 2rem;
   }
 }
 @media (max-width: 768px) {
@@ -1074,6 +971,7 @@ footer .footer-wrapper .top {
   }
   .modal .navbar-nav li a {
     color: white;
+    text-transform: capitalize;
   }
 
   .heading {

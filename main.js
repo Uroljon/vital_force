@@ -90,7 +90,7 @@ let en = {
     hero_description: "Explore your hidden potential in an exclusive environment and have fun!",
     explore_btn: "Explore now !",
     congrats: "Congratulations!",
-    message_text: ["Your application was accepted!", "Your IELTS score is 7.5", "You passed job interview!"],
+    message_text: ["Your application is accepted!", "Your IELTS score is 7.5", "You passed job interview!"],
     course_sub: "Choice of",
     course_title: "Courses",
     course_text: "We do our best to make every course special for you !",
@@ -179,7 +179,7 @@ function set_lang(lang) {
     }
     function languify(lan) {
         // nav
-        document.querySelectorAll('.navbar-nav li a').forEach((nav, index) => {
+        document.querySelectorAll('.navbar-middle .navbar-nav li a').forEach((nav, index) => {
             nav.textContent = `${lan.nav[index]}`
         });
         document.querySelector('#current_lang').textContent = lang;
@@ -192,6 +192,10 @@ function set_lang(lang) {
         });
         document.querySelector('.message-title').textContent = lan.congrats;
         words = lan.message_text;
+        // modal
+        document.querySelectorAll('.modal .navbar-nav li a').forEach((nav, index) => {
+            nav.textContent = `${lan.nav[index]}`
+        });
         // courses
         document.querySelector('.course-subtitle').textContent = lan.course_sub;
         document.querySelector('.course-title').textContent = lan.course_title;
@@ -253,34 +257,35 @@ function typewriter() {
     }
 }
 // modal on navbar
-document.querySelector('.close-modal').addEventListener("click",toggle_modal);
+document.querySelector('.close-modal').addEventListener("click", toggle_modal);
 document.querySelector('.burger').addEventListener("click", toggle_modal);
-document.querySelectorAll('.modal li').forEach(_=>{
+document.querySelectorAll('.modal li').forEach(_ => {
     _.addEventListener("click", toggle_modal);
 });
 function toggle_modal() {
     document.querySelector('.modal').classList.toggle("active");
 }
 // conditional rendering #student section for <768px viewpoint
-function media_js(){
+function media_js() {
     let num_of_photos = 25;
-    if(document.body.clientWidth < 768 && document.body.clientWidth > 576){
+    if (document.body.clientWidth < 768 && document.body.clientWidth > 576) {
         // students renders controller
 
         document.querySelector('.students-wrapper').innerHTML = '';
         for (let i = 1; i <= 6; i++) {
             document.querySelector('.students-wrapper').innerHTML += `<a href="./students/${i}.jpg" target="_blank" class="student"><img src="./students/${i}.jpg" alt="${i}"></a>`
         }
-        
-    } else if(document.body.clientWidth < 576){
-        if(document.body.clientWidth < 500){
+
+    } else if (document.body.clientWidth < 576) {
+        if (document.body.clientWidth < 500) {
             document.querySelector('.students-wrapper').innerHTML = '';
             for (let i = 1; i <= 3; i++) {
                 document.querySelector('.students-wrapper').innerHTML += `<a href="./students/${i}.jpg" target="_blank" class="student"><img src="./students/${i}.jpg" alt="${i}"></a>`
             }
         }
         // hero bottom controller
-        document.querySelector('.hero-image').style.bottom = `-${(document.body.clientWidth-300)/20 + 141}px`;
+        document.querySelector('.hero-image').style.bottom = `-${(document.body.clientWidth - 300) / 20 + 141}px`;
+        document.querySelector('.message-box').style.bottom = `${26-(document.body.clientWidth - 300) / 20}px`;
     }
 }
 media_js()
