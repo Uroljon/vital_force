@@ -267,10 +267,8 @@ function toggle_modal() {
 }
 // conditional rendering #student section for <768px viewpoint
 function media_js() {
-    let num_of_photos = 25;
     if (document.body.clientWidth < 768 && document.body.clientWidth > 576) {
         // students renders controller
-
         document.querySelector('.students-wrapper').innerHTML = '';
         for (let i = 1; i <= 6; i++) {
             document.querySelector('.students-wrapper').innerHTML += `<a href="./students/${i}.jpg" target="_blank" class="student"><img src="./students/${i}.jpg" alt="${i}"></a>`
@@ -289,6 +287,16 @@ function media_js() {
     }
 }
 media_js()
+
+// student load more btn
+document.querySelector(".students-btn").addEventListener("click", ()=>{
+    let max = 25;
+    let rendered = document.querySelectorAll('.student').length;
+    console.log(rendered)
+    if(rendered < max){
+        document.querySelector('.students-wrapper').insertAdjacentHTML("beforeend", `<a href="./students/${rendered+1}.jpg" target="_blank" class="student"><img src="./students/${rendered+1}.jpg" alt="${rendered+1}"></a>`);
+    }
+});
 
 window.addEventListener("DOMContentLoaded", () => {
     carousel_init(array);

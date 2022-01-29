@@ -830,8 +830,12 @@ footer .footer-wrapper .top {
     line-height: unset !important;
   }
 
+  .section-divider {
+    display: none;
+  }
+
   #teachers {
-    padding: 40px 0 30px !important;
+    padding: 0px 0 30px !important;
   }
   #teachers .teachers-wrapper .teacher-item {
     grid-template-columns: 30% 1fr !important;

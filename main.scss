@@ -21,7 +21,6 @@ a {
     margin: 0 auto;
 }
 body {
-    // overflow-x: hidden;
     background-color: #e5e5e5;
 }
 .heading {
@@ -799,8 +798,11 @@ footer {
             }
         }
     }
+    .section-divider {
+        display: none;
+    }
     #teachers {
-        padding: 40px 0 30px !important;
+        padding: 0px 0 30px !important;
         .teachers-wrapper {
             .teacher-item {
                 grid-template-columns: 30% 1fr !important;
@@ -1545,12 +1547,9 @@ footer {
         }
     }
 }
-
 // xxl
 @media (min-width: 1401px) {
     .container {
         width: 1320px;
     }
 }
-
-// box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.26);
